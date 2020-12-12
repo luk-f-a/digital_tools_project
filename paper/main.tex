@@ -1,0 +1,44 @@
+\documentclass{article}
+\usepackage{amsmath}
+\usepackage[utf8]{inputenc}
+\usepackage{booktabs}
+
+\title{Simulation of stock prices \\ Semester project - Digital Tools for Finance}
+\author{Lucio Fernandez Arjona}
+\date{December 2020}
+
+\begin{document}
+
+\maketitle
+
+\tableofcontents
+
+\section{Introduction}
+In this paper we demonstrate the simulation of stock prices using a geometric Brownian motion.
+
+\section{Simulation model}
+A stochastic process St is said to follow a GBM if it satisfies the following stochastic differential equation (SDE):
+
+\[dS_{t}=\mu S_{t}\,dt+\sigma S_{t}\,dW_{t}\]
+where $W_{t}$ is a Wiener process or Brownian motion, and $\mu$  (the percentage drift) and $\sigma$  (the percentage volatility) are constants.
+
+For an arbitrary initial value $S_0$ the above SDE has the analytic solution:
+
+\[S_{t}=S_{0}\exp \left(\left(\mu -{\frac {\sigma ^{2}}{2}}\right)t+\sigma W_{t}\right)\]
+
+\section{Numerical example}
+In this section we simulate the price evolution of the share of two fictitious companies---Tyrell Corporation and Cyberdyne Systems---with the following parameters:
+
+\begin{table}[]
+\begin{tabular}{lll}
+\toprule
+                   & \boldsymbol{\mu} & \boldsymbol{\sigma} \\ 
+\midrule
+\textbf{Tyrell}    & 0.02         & 0.2             \\ 
+\textbf{Cyberdyne} & 0.03         & 0.25            \\ 
+\bottomrule
+\end{tabular}
+\caption{Parameters for the simulation}
+\end{table}
+
+\end{document}
