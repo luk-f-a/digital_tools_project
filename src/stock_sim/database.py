@@ -24,7 +24,7 @@ def get_simulations(stock_name: str) -> pd.DataFrame:
 
 def insert_simulations(stock_name:str, simulations: pd.DataFrame) -> None:
     folder = os.path.expandvars("$DT4F_PROJECT/data")
-    assert os.path.exists(folder)
+    assert os.path.exists(folder), f"folder {folder} does not exist"
     filepath = os.path.join(folder, stock_name + ".parquet")
     if os.path.exists(filepath):
         current_data = pd.read_parquet(filepath)
